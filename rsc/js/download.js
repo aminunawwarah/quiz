@@ -170,7 +170,7 @@ function calculateSummary(responses) {
         }
     }
 
-    percentage = total / 45 * 100;
+    percentage = total / 60 * 100;
 
     return { correctAnswers, incorrectAnswers, total, percentage };
 }
