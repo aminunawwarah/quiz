@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font-families.css">
+    <link rel="stylesheet" href="css/questions.css">
+    <link rel="stylesheet" href="css/css/all.css">
+    <link rel="stylesheet" href="css/Notification-Dialog/styles/notification-dialog-styles.css">
+    <script defer src="css/Notification-Dialog/functions/notification-dialog-functions.js"></script>
+    <script defer src="js/Quardratic.js"></script>
+    <script defer src="js/answers.js"></script>
+    <script defer src="js/questions.js"></script>
+    <script defer src="js/storage.js"></script>
+    <script defer src="js/timer.js"></script>
+    <script defer src="js/download.js"></script>
+    <script defer src="js/pdfmake.js"></script>
+    <script defer src="js/vfs_fonts.js"></script>
+    <title>Start QUIZ</title>
+    <title>Questions</title>
+</head>
+<body>
+    <div class="timer">
+        <p class="normal-text">Time left: <span class="timer-text">00:00:00</span></p>
+    </div>
+    <div>
+        <p class="normal-text">Student name: <span class="student-name-text"><%= currentUser.studentName %></span></p>
+        <p class="normal-text">Quiz ID: <span class="quiz-id-text"><%= currentUser.id %></span></p>
+    </div>
+    <% questions.forEach((q, qn) => { %>
+        <div class="question">
+            <p class="question-title"><%= q.question %></p>
+            <div class="question-options">
+                <% q.options.forEach((o, i) => { %>
+                    <div>
+                        <input type="radio" name="question-<%= qn + 1 %>" id="q-<%= qn + 1 %>-<%= o.slice(0, 1) %>">
+                        <label class="normal-text" for="q-<%= qn + 1 %>-<%= o.slice(0, 1) %>"><%= o %></label>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    <% }) %>
+    <button id="submit-questions">Submit</button>
+    <div class="finished-section">
+        <p class="finish-text">Congratulations! You've completed your quiz. Thank you for taking your time
+            to take the quiz.
+        </p>
+        <button id="download-button">Download Result</button>
+        <% if (currentUser.studentName.includes('Admin')) { %>
+            <button onclick="localStorage.clear()">Reset</button>
+        <% } %>
+    </div>
+</body>
+</html>

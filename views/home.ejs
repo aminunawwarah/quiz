@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font-families.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/css/all.css">
+    <link rel="stylesheet" href="css/Notification-Dialog/styles/notification-dialog-styles.css">
+    <script defer src="css/Notification-Dialog/functions/notification-dialog-functions.js"></script>
+    <script defer src="js/start.js"></script>
+    <title>Start QUIZ</title>
+</head>
+<body>
+    <p class="id-selection-heading">Start QUIZ</p>
+    <p>Read the following instructions carefully before you start the quiz.</p>
+    <ol class="instructions">
+        <li>Turn off all external notifications on your device before starting the quiz.</li>
+        <li>Enter the unique ID that you were given for the quiz and click the 'Start Quiz' button.</li>
+        <li>Do not leave the questions page, switch to other tabs, or minimize the browser.</li>
+        <li>Click the 'Submit' button at the bottom of the page when you finish answering the questions.</li>
+        <li>After the submission, click the 'Download Result' button to see your performance.</li>
+    </ol>
+    <p>Please note that your quiz is timed. Your responses will be submitted automatically when the timer runs.</p>
+    <div class="id-selection-section">
+        <div>
+        </div>
+        <form id="form" action="/questions" method="post">
+            <div>
+                <label class="normal-text" for="user-id-field">Your quiz ID:</label><br>
+                <input id="user-id-field" name="quizID" type="text" placeholder="Type in your ID in here...">
+            </div>
+            <button>Start Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

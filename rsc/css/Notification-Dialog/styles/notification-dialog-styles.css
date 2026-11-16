@@ -1,0 +1,185 @@
+.notification-dialog-overlay,
+.information-overlay,
+.confirmation-dialog-overlay {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: #00000070;
+    transition: 0.5s ease all;
+}
+
+.notification-dialog-container,
+.additional-information-container,
+.cofirmation-dialog-container {
+    font-size: 1.2rem;
+    background: #FFFFFF;
+    display: flex;
+    border-top: 5px solid #442063;
+    border-bottom: 5px solid #442063;
+    padding: 1.5rem;
+    column-gap: 2rem;
+    width: 30rem;
+    transition: 0.5s ease all;
+}
+
+.additional-information-container {
+    width: 27rem;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.dialog-content,
+.confirmation-content-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.dialog-icon,
+.confirmation-icon {
+    font-size: 3rem;
+    padding: 0.7rem;
+    border-radius: 50%;
+    width: 4.5rem;
+    text-align: center;
+}
+
+.confirmation-icon {
+    color: #380069;
+    border: 1px solid #380069;
+}
+
+.icon-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.notification-dialog-title,
+.confirmation-dialog-title,
+.confirmation-dialog-body,
+.notification-dialog-body,
+.notification-dialog-close-button,
+.additional-information-body,
+.additional-information {
+    font-size: 1.3rem;
+    font-family: Quardratic,'Segoe UI', Geneva, Verdana, sans-serif;
+}
+
+.notification-dialog-body,
+.additional-information-body,
+.additional-information,
+.confirmation-dialog-body {
+    font-size: 1.2rem;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2rem;
+}
+
+.notification-dialog-close-button,
+.yes-button,
+.no-button,
+.close-additional-information {
+    outline: none;
+    border: 1px solid #271735;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: Quardratic, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    transition: 0.5s ease all;
+    background: #271735;
+    color: #FFFFFF;
+    padding: 0.3rem;
+    width: 100%;
+}
+
+.notification-dialog-close-button:hover,
+.close-additional-information:hover,
+.yes-button:hover,
+.no-button:hover {
+    background: #FFFFFF;
+    color: #573573;
+}
+
+.additional-information {
+    color: #271735;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    display: none;
+}
+
+.additional-information:hover {
+    color: #FF00BB;
+}
+
+@media screen and (max-width: 800px) {
+    .notification-dialog-container,
+    .cofirmation-dialog-container {
+        width: 27rem;
+        padding: 1.2rem;
+    }
+
+    .notification-dialog-body,
+    .confirmation-dialog-body,
+    .additional-information {
+        font-size: 1.1rem;
+    }
+
+    .additional-information-container {
+        width: 20rem;
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .notification-dialog-container,
+    .cofirmation-dialog-container {
+        width: 100%;
+    }
+    .notification-dialog-title
+    .confirmation-dialog-title {
+        font-size: 1.2rem;
+    }
+
+    .notification-dialog-body,
+    .confirmation-dialog-body,
+    .additional-information {
+        font-size: 1rem;
+    }
+
+    .notification-dialog-close-button,
+    .yes-button,
+    .no-button,
+    .close-additional-information {
+        font-size: 0.6rem;
+        padding: 0.2rem;
+        border-radius: 0.3rem;
+    }
+
+    .dialog-icon {
+        font-size: 2rem;
+        padding: 0.7rem;
+        border-radius: 50%;
+        width: 3.5rem;
+        text-align: center;
+    }
+
+    .notification-dialog-container,
+    .additional-information-container,
+    .cofirmation-dialog-container {
+        column-gap: 1.6rem;
+    }
+}
